@@ -11,7 +11,7 @@ import co.edu.unal.se1.dataAccess.model.User;
 @RunWith(MockitoJUnitRunner.class)
 public class UserControllerTest {
 
-    User user = new User();
+    
     @Mock
     Context mockContext;
 
@@ -24,7 +24,6 @@ public class UserControllerTest {
         user.setPassword(100000);
         UserController controller= new UserController();
         controller.createUser(user,mockContext);
-
     }
 
     @Test
