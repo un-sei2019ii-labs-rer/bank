@@ -11,7 +11,7 @@ import co.edu.unal.se1.dataAccess.model.Transaction;
 @Dao
 public interface TransactionDao {
 
-    @Query("SELECT * FROM `transaction` T, user U WHERE T.user_Id == U.user_Id and user_Id = :id")
+    @Query("SELECT * FROM `transaction` T, user U WHERE T.user_Id == id ")
     List<Transaction> getAllTransactionsByUser(int id);
 
     @Insert

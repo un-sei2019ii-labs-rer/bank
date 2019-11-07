@@ -13,11 +13,11 @@ import co.edu.unal.se1.dataAccess.model.Account;
 @Dao
 public interface AccountDao {
 
-    @Query("SELECT account_Id, name FROM account A, user U WHERE A.user_Id = U.user_Id and user_Id = :id")
+    @Query("SELECT account_Id, name FROM account A, user U WHERE A.user_Id = U.user_Id and A.user_Id = :id")
     List<Account> showAccounts(int id);
 
-    @Query("SELECT * FROM account WHERE id = :id")
-    Account getAccountById(int id);
+    @Query("SELECT * FROM account WHERE account_Id = :account_Id")
+    Account getAccountById(int account_Id);
 
     @Insert
     void createAccount(Account account);
