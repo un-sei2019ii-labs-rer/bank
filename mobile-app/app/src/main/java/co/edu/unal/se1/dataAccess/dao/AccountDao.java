@@ -13,7 +13,7 @@ import co.edu.unal.se1.dataAccess.model.Account;
 @Dao
 public interface AccountDao {
 
-    @Query("SELECT account_Id, name FROM account A, user U WHERE A.user_Id = U.user_Id and A.user_Id = :id")
+    @Query("SELECT account_Id,name  FROM account inner join user WHERE user_Id = :id")
     List<Account> showAccounts(int id);
 
     @Query("SELECT * FROM account WHERE account_Id = :account_Id")
